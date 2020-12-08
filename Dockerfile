@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu
 MAINTAINER vishwambhar.kapare@paroscale.com
 RUN apt-get clean \
     && apt update \
