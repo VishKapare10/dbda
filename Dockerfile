@@ -10,3 +10,5 @@ RUN apt-get update \
     && python3 dbda/code/r_no.py \
     && python3 dbda/code/bank_acc.py \
     && echo inside container!
+CMD cd /opt/dbda \
+    && python3 dbda/code/date.py
