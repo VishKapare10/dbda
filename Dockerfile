@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 MAINTAINER vishwambhar.kapare@paroscale.com
 RUN apt-get update \
     && apt-get install -y git \
