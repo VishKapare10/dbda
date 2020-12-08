@@ -1,6 +1,6 @@
 FROM ubuntu
 MAINTAINER vishwambhar.kapare@paroscale.com
-RUN apt update \
+RUN apt-get update \
     && apt-get install -y git \
     && apt-get -y install python3-pip \
     && mkdir -p /opt/dbda  \
