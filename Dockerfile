@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER vishwambhar.kapare@paroscale.com
-RUN apt update \
+RUN apt-get clean \
+    && apt update \
     && apt-get install -y git \
     && apt-get -y install python3-pip \
     && pip3 install ansible \
