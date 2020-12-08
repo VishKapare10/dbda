@@ -26,5 +26,5 @@ s = Bank_Account()
    
 # Calling functions with that class object 
 s.deposit(50000) 
-s.withdraw(1000) 
+s.withdraw(10000) 
 s.display()
