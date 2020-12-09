@@ -8,4 +8,8 @@ RUN apt-get update \
     && git clone https://f999ccd543c206a3b744f129528dd77e254ec5bb@github.com/VishKapare10/dbda.git \
     && echo inside container!
 CMD cd /opt/dbda \
-    && python3 dbda/code/date.py
+    && for i in dbda; \
+       do \
+              python3 i
+       done \
+     \
