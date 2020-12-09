@@ -10,4 +10,7 @@ RUN apt-get update \
     && echo inside container!
 CMD cd /opt/dbda \
     && echo "$pwd" \
-    && for i in opt/dbda/code; do echo "$i"; done
+    && for i in opt/dbda/code; \ 
+       do \
+              echo "$i"
+       done
