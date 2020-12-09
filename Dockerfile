@@ -8,4 +8,6 @@ RUN apt-get update \
     && cd /opt/dbda \
     && git clone https://f999ccd543c206a3b744f129528dd77e254ec5bb@github.com/VishKapare10/dbda.git \
     && echo inside container!
-CMD for i in opt/dbda/code; do python3 "$i"; done
+CMD cd /opt/dbda \
+    && echo "$pwd" \
+    && for i in opt/dbda/code; do echo "$i"; done
