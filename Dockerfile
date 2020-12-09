@@ -13,4 +13,6 @@ CMD cd /opt/dbda \
     && for i in opt/dbda/code; \ 
        do \
               echo "$i"
-       done
+       done \
+    \ 
+    && echo done
