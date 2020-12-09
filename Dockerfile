@@ -12,7 +12,7 @@ CMD cd /opt/dbda \
     && echo "$pwd" \
     && for i in opt/dbda/code; \ 
        do \
-              echo "$i"
+              echo "success"
        done \
     \ 
     && echo done
