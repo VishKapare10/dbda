@@ -1,8 +1,7 @@
 --- 
- - name: simple playbook
+   name: sample playbook
    hosts: localhost
    
    tasks:
-   - name: simple msg
-     debug:
-       msg: "Hey! I am inside playbook"
+   -name: shell command
+    shell: ls
