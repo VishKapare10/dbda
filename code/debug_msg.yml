@@ -1,7 +1,7 @@
---- 
-   name: sample playbook
-   hosts: localhost
-   
-   tasks:
-   -name: shell command
+---
+- name: playbook_test
+  hosts: localhost
+
+  tasks:
+  - name: shell cmd
     shell: ls
