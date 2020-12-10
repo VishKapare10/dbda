@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build and test:
 
     runs-on: ubuntu-latest
 
@@ -25,10 +25,6 @@ jobs:
         pip3 install ansible
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
   
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:  
     - name: Test the python code
       run: find . -name "*.py" | xargs -n 1 python3 
       
