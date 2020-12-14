@@ -1,8 +1,10 @@
---- 
- - name: simple playbook
-   hosts: localhost
-   
-   tasks:
-   - name: simple msg
-     debug:
-       msg: "Hey! I am inside playbook"
+---
+- name: playbook_test
+  hosts: localhost
+
+  vars:
+    par: 23
+  tasks:
+  - name: debug_msg
+    debug: var=par
+    #failed_when: par==23
