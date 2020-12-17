@@ -8,4 +8,5 @@ RUN apt-get update \
     && echo inside container!
 WORKDIR /opt
 COPY . /opt
+RUN curl https://github.com/VishKapare10/dbda/releases/tag/refs%2Fheads%2Fmaster/my-artifact.zip
 CMD find . -name "*.py" | xargs -n 1 python3
