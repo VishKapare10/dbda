@@ -30,4 +30,4 @@ jobs:
       run: ansible-playbook code/debug_msg.yml
      
     - name: download .zip file
-      run: curl https://github.com/VishKapare10/dbda/releases/tag/refs%2Fheads%2Fmaster/my-artifact.zip
+      run: curl https://github.com/VishKapare10/dbda/releases/tag/refs%2Fheads%2Fmaster &&  ls -l
