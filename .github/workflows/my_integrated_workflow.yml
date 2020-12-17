@@ -31,7 +31,7 @@ jobs:
         
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
-          tar --junk-paths my-artifact code/debug_msg.yml
+          zip --junk-paths my-artifact code/debug_msg.yml
           
     - name: Create Release
       id: create_release
