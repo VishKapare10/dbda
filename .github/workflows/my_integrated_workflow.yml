@@ -56,4 +56,5 @@ jobs:
           asset_content_type: application/zip
     - name: get_package
       run: sudo apt-get install zip unzip &&
-           unzip https://github.com/VishKapare10/dbda/releases/tag/refs%2Fheads%2Fmaster
+           unzip https://github.com/VishKapare10/dbda/releases/tag/refs%2Fheads%2Fmaster/my-artifact.zip
+
