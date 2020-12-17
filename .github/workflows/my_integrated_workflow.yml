@@ -30,13 +30,7 @@ jobs:
       
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
-      
-    - name: upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: ./code
-      
+        
     - name: dbda_1.0
       id: create_release
       uses: actions/create-release@v1
