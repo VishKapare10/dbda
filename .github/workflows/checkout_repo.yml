@@ -21,3 +21,5 @@ jobs:
         path: .
     - name: list out
       run: ls -l
+    - name: Build the tagged Docker image
+      run: docker build . --file Dockerfile --tag v1
