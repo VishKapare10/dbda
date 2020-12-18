@@ -8,4 +8,4 @@ RUN apt-get update \
     && echo inside container!
 WORKDIR /opt
 COPY . /opt
-CMD find . -name "*.py" | xargs -n 1 python3
+COPY ./hello-world-docker-action /opt
