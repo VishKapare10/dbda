@@ -8,4 +8,3 @@ RUN apt-get update \
     && echo inside container!
 WORKDIR /opt
 COPY . /opt
-COPY ./hello-world-docker-action /opt
