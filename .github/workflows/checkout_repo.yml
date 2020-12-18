@@ -17,4 +17,4 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: VishKapare10/inte_pycode
-        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
+        token: ${{ secrets.DEC18_TOKEN }} # 'DEC18_token' is a secret that contains your PAT
