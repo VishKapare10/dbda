@@ -32,3 +32,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run code
       run: python3 hello-world-docker-action/random_no_gen.py
+    - name: get pwd
+      run: pwd
