@@ -1,0 +1,26 @@
+name: dec21_checkout_build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Checkout
+
+    - name: Checkout repo:inte_pycode
+      uses: actions/checkout@v2
+      with:
+       repository: VishKapare10/inte_pycode
+       token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
+       path: .
+    
+    - name: list-out
+      run: ls -l
