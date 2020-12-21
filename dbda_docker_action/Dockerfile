@@ -6,4 +6,5 @@ RUN apt-get update -y \
     && pip3 install ansible 
 WORKDIR /opt
 COPY ./inte_pycode /opt
-RUN ls
+RUN ls -l
+RUN ansible-playbook ansible_code/demo_play.yml
