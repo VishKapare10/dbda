@@ -31,9 +31,12 @@ jobs:
     
     - name: list dbda
       run: ls dbda
-    - name: list int_pycode
+    - name: list inte_pycode
       run: ls inte_pycode
-  
+    - name: copy files
+      run: cp inte_pycode/hello-world-docker-action/* ./dbda/dbda_docker_action
+    - name: listout dir
+      run: ls ./dbda/dbda_docker_action
     - name: build_and_run
       uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
