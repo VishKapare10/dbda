@@ -38,6 +38,8 @@ jobs:
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: ./inte_pycode
     - name: list
-      run: ls -l \
-           && ls ./dbda \
-           && ls ./inte_pycode
+      run: ls -l
+    - name: list dbda
+      run: ls dbda
+    - name: list inte_pycode
+      run: ls inte_pycode
