@@ -1,11 +1,7 @@
 
 FROM ubuntu:20.04
 MAINTAINER vishwambhar.kapare@paroscale.com
-RUN apt-get update \
-    && apt-get install -y git \
-    && apt-get -y install python3-pip \
-    && git clone https://f999ccd543c206a3b744f129528dd77e254ec5bb@github.com/VishKapare10/dbda.git \
-    && echo inside container!
+RUN apt-get update
 WORKDIR /opt
 COPY . /opt
-CMD find . -name "*.py" | xargs -n 1 python3
+RUN ls -l
