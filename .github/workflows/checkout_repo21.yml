@@ -39,5 +39,5 @@ jobs:
        path: ./inte_pycode
     - name: list
       run: ls -l \
-           && ls dbda \
-           && ls inte_pycode
+           && ls ./dbda \
+           && ls ./inte_pycode
