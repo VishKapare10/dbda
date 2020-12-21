@@ -27,8 +27,8 @@ jobs:
        path: ./dbda_docker_action
 
     - name: list-out
-      run: ls /home/runner/work/dbda/dbda
+      run: ls /home/runner/work/dbda/dbda/dbda_docker_action
     
     - name: build_and_run
-      uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
+      uses: /home/runner/work/dbda/dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
