@@ -1,0 +1,6 @@
+# action.yml
+name: 'Sample Action Workflow'
+description: 'building docker image and running sample code'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
