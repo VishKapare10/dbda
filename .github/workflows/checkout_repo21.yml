@@ -34,7 +34,7 @@ jobs:
     - name: list inte_pycode
       run: ls inte_pycode
     - name: copy files
-      run: cp inte_pycode/hello-world-docker-action/* ./dbda/dbda_docker_action
+      run: cp inte_pycode/hello-world-docker-action/random_no_gen.py ./dbda/dbda_docker_action
     - name: listout dir
       run: ls ./dbda/dbda_docker_action
     - name: build_and_run
