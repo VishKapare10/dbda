@@ -23,6 +23,6 @@ jobs:
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: .
     - name: Copy dbda code
-      run: copy /code .
+      run: cp /code .
     - name: list-out
       run: ls -l
