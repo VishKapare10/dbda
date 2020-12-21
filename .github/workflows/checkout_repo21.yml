@@ -32,13 +32,13 @@ jobs:
       run: ls -l
                  
     - name: Test the python code
-      run: python3 code/date.py 
+      run: python3 dbda/code/date.py 
     
     - name: Checkout repo:inte_pycode
       uses: actions/checkout@v2
       with:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
-       path: .
+       path: ./inte_pycode
     - name: list-out
       run: ls -l
