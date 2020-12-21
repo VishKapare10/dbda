@@ -18,16 +18,16 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: checkout_21
-        path: ./dbda
+        path: ./dbda/dbda_docker_action
     - name: Checkout repo:inte_pycode
       uses: actions/checkout@v2
       with:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
-       path: ./inte_pycode
+       path: ./dbda/dbda_docker_action
 
     - name: list-out
-      run: ls /home/runner/work/dbda/dbda
+      run: ls /home/runner/work/dbda/dbda/dbda_docker_action
     
     - name: build_and_run
       uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
