@@ -27,8 +27,9 @@ jobs:
        path: ./inte_pycode
 
     - name: check wd
-      run: cd inte_pycode \
-           && pwd
+      run: cd inte_pycode
+    - name: pwd
+      run: pwd
     - name: build_and_run
       uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
