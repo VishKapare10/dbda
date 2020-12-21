@@ -25,6 +25,8 @@ jobs:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: ./inte_pycode
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: build_and_run
       uses: dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
