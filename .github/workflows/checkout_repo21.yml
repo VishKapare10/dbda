@@ -23,7 +23,7 @@ jobs:
        path: ./inte_pycode
        
     - name: copy code inside docker-action directory.
-      run: cp -r dbda inte_pycode ./dbda/dbda_docker_action
+      run: cp -r inte_pycode ./dbda/dbda_docker_action
       
     - name: build_and_run docker image
       uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
