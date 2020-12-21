@@ -19,32 +19,12 @@ jobs:
       with:
         ref: checkout_21
         path: ./dbda
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-    - name: Test the python code
-      run: python3 dbda/code/date.py 
-    
     - name: Checkout repo:inte_pycode
       uses: actions/checkout@v2
       with:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: ./inte_pycode
-    - name: list
-      run: ls -l
-    - name: list dbda
-      run: ls dbda
-    - name: list inte_pycode
-      run: ls inte_pycode
-    - name: pwd
-      run: pwd
     - name: build_and_run
       uses: dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
