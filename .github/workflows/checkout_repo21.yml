@@ -26,8 +26,9 @@ jobs:
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: ./inte_pycode
 
-    - name: list-out
-      run: ls dbda
+    - name: check wd
+      run: cd inte_pycode \
+           && pwd
     - name: build_and_run
       uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
