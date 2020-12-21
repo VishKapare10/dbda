@@ -4,4 +4,4 @@ MAINTAINER vishwambhar.kapare@paroscale.com
 RUN apt-get update
 WORKDIR /opt
 COPY . /opt
-RUN ls -l
+COPY -r ./inte_pycode ./opt
