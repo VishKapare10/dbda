@@ -22,12 +22,9 @@ jobs:
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: ./inte_pycode
        
-    - name: copy files
-      run: cp -r inte_pycode ./dbda/dbda_docker_action
+    - name: copy code inside docker-action directory.
+      run: cp -r dbda inte_pycode ./dbda/dbda_docker_action
       
-    - name: listout dir
-      run: ls ./dbda/dbda_docker_action
-      
-    - name: build_and_run
+    - name: build_and_run docker image
       uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
       id: build_and_run
