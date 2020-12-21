@@ -29,8 +29,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
   
     - name: copy
-      run: cp code/* .
-      
+      run: cp -r code . \
+           && ls -l
+                 
     - name: Test the python code
       run: python3 code/date.py 
     
