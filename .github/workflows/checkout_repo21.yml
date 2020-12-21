@@ -28,9 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: list-out
-      run: ls -l
-                 
     - name: Test the python code
       run: python3 dbda/code/date.py 
     
@@ -40,6 +37,5 @@ jobs:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: ./inte_pycode
-    - name: list-out
-      run: ls dbda \
-           && ls inte_pycode
+    - name: list
+      run: ls -l
