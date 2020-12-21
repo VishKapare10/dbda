@@ -28,6 +28,9 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
   
+    - name: copy
+      run: cp code/* .
+      
     - name: Test the python code
       run: python3 code/date.py 
     
