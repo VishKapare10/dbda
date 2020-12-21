@@ -4,4 +4,4 @@ MAINTAINER vishwambhar.kapare@paroscale.com
 RUN apt-get update
 WORKDIR /opt
 COPY . /opt
-RUN ls -l
+COPY -r /home/runner/work/dbda/dbda/inte_pycode /opt
