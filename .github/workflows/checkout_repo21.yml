@@ -22,6 +22,7 @@ jobs:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: .
-    
+    - name: Copy dbda code
+      run: copy /code .
     - name: list-out
       run: ls -l
