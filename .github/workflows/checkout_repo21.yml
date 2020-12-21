@@ -16,19 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        repository: VishKapare10/dbda
-        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
-        path: .
     - name: Checkout repo:inte_pycode
       uses: actions/checkout@v2
       with:
        repository: VishKapare10/inte_pycode
        token: ${{ secrets.DEC18_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
        path: .
-    - name: list-out
-      run: ls -l
-    - name: Copy dbda code
-      run: cp /code .
     - name: list-out
       run: ls -l
