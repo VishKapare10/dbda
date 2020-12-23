@@ -9,5 +9,3 @@ COPY ./inte_pycode /opt
 RUN ls -l
 RUN ansible-playbook ansible_code/demo_play.yml
 CMD python3 ./log_create.py
-CMD ls -l
-CMD cat ./app.log
