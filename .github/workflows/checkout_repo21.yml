@@ -48,7 +48,7 @@ jobs:
       run: mkdir target && ls -l  
       
     - name: Using bind mount
-      run: sudo docker run -it --name=dbda_2 --mount type=bind,source="$(pwd)"/target,target=/app cc4956:102267eac6f850e5e2ae674a50bf9349
+      run: sudo docker run --name=dbda_2 --mount type=bind,source="$(pwd)"/target,target=/opt cc4956:102267eac6f850e5e2ae674a50bf9349
       
     - name: list-out
       run: ls -l
