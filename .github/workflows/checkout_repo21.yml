@@ -35,5 +35,11 @@ jobs:
     - name: list docker images
       run: sudo docker images
       
-    - name: run docker image
-      run: sudo docker run cc4956:102267eac6f850e5e2ae674a50bf9349
+    - name: create volume
+      run: sudo docker volume create dbda_volume
+      
+    - name: run docker container with volume
+      run: sudo docker run -v "$(pwd)":/dbda_volume cc4956:102267eac6f850e5e2ae674a50bf9349
+      
+    - name: Print docker volume ls
+      run: sudo docker volume ls
