@@ -4,4 +4,4 @@ RUN apt-get update -y \
 WORKDIR /opt
 COPY . /opt
 RUN ls -l /opt
-RUN ["/bin/bash", "-c", "cd /opt && ls && python3 log_create.py && ls -l"]
+CMD ["/bin/bash", "-c", "cd /opt && ls && touch app.log && ls -l"]
