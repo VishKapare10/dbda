@@ -8,4 +8,4 @@ WORKDIR /opt
 COPY ./inte_pycode /opt
 RUN ls -l
 RUN ansible-playbook ansible_code/demo_play.yml
-CMD python3 ./log_create.py
+RUN python3 ./log_create.py
