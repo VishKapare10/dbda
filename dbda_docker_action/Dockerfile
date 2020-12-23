@@ -4,4 +4,5 @@ RUN apt-get update -y \
 WORKDIR /opt
 COPY . /opt
 RUN ls -l /opt
-CMD ["/bin/bash", "-c", "cd /opt && ls && python3 log_create.py && ls -l"]
+RUN ls -l /opt/inte_pycode
+CMD ["/bin/bash", "-c", "cd /opt && ls && python3 inte_pycode/log_create.py && ls -l"]
