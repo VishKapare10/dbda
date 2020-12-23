@@ -36,4 +36,4 @@ jobs:
       run: sudo docker images
       
     - name: run docker image
-      run: sudo docker run -it cc4956:102267eac6f850e5e2ae674a50bf9349
+      run: sudo docker run cc4956:102267eac6f850e5e2ae674a50bf9349
