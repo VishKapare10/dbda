@@ -52,3 +52,6 @@ jobs:
       
     - name: list-out
       run: ls -l
+    
+    - name: list target directory
+      run: ls /target
