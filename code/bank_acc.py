@@ -28,4 +28,3 @@ s = Bank_Account()
 s.deposit(50000) 
 s.withdraw(10000) 
 s.display()
-a =10 /0
