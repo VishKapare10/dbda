@@ -30,7 +30,6 @@ jobs:
     - name: Test playbook
       id: playbook
       run: ansible-playbook code/debug_msg.yml
-      continue-on-error: true
       
     - name: Display event name on which job is triggered
       run: echo Event name:${{ github.event_name }}
