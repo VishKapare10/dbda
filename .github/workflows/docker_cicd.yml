@@ -30,7 +30,7 @@ jobs:
       run: ansible-playbook code/debug_msg.yml
       
     - name: Display event name on which job is triggered
-      run: echo Event name:${{ github.event_name }} &&  echo job.status
+      run: echo Event name:${{ github.event_name }} && echo ${{ job.status }} 
       
     - name: Build and push docker image
       uses: mr-smithers-excellent/docker-build-push@v5
