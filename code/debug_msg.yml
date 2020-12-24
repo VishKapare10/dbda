@@ -7,4 +7,4 @@
   tasks:
   - name: debug_msg
     debug: var=par
-    #failed_when: par==23
+    failed_when: par==23
