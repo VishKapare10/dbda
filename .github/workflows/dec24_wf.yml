@@ -23,14 +23,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip3 install ansible
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Test the python code
       run: find . -name "*.py" | xargs -n 1 python3 
-      
-    - name: Test playbook
-      run: ansible-playbook code/debug_msg.yml
       
     - name: Build and push docker image
       uses: mr-smithers-excellent/docker-build-push@v5
@@ -39,4 +35,5 @@ jobs:
         tags: git_cicd_base24
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}  
+        password: ${{ secrets.DOCKER_PASSWORD }} 
+      if: success 
