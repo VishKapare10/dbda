@@ -34,9 +34,8 @@ jobs:
     needs: setup_and_run
     runs-on: ubuntu-latest
     steps:
-    - name: My first step
-      if: ${{ github.event_name == 'push' }}
-      run: echo This event is a push event:${{ github.event_name }}
+    - name: Display event name on which job is triggered
+      run: echo Event name:${{ github.event_name }}
       
     - uses: actions/checkout@v2
     - name: Build and push docker image
