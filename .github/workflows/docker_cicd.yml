@@ -24,11 +24,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Test the python code
-      id: py_code
       run: find . -name "*.py" | xargs -n 1 python3 
       
     - name: Test playbook
-      id: playbook
       run: ansible-playbook code/debug_msg.yml
       
     - name: Display event name on which job is triggered
