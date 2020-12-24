@@ -30,7 +30,7 @@ jobs:
       run: ansible-playbook code/debug_msg.yml
       
   build:
-    if: ${{ success() }}
+    if: ${{ success() }} && ${{ github.event_name == 'push' }}
     needs: setup_and_run
     runs-on: ubuntu-latest
     steps:
