@@ -26,6 +26,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Test the python code
+      id: run_code
       run: find . -name "*.py" | xargs -n 1 python3 
       
     - name: Build and push docker image
@@ -36,4 +37,4 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }} 
-      if: success 
+      if: ${{ success() }}
