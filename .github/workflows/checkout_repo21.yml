@@ -1,0 +1,57 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+name: checkout_workflow21
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: checkout_21
+        path: ./dbda
+    - name: Checkout repo:inte_pycode
+      uses: actions/checkout@v2
+      with:
+       repository: VishKapare10/inte_pycode
+       token: ${{ secrets.DEC18_TOKEN }} # 'GitHub_PAT' is a secret that contains your PAT
+       path: ./inte_pycode
+       
+    - name: copy code inside docker-action directory.
+      run: cp -r inte_pycode ./dbda/dbda_docker_action
+      
+    - name: build_and_run docker image
+      uses: ./dbda/dbda_docker_action # Uses an action in the specified directory
+      id: build_and_run
+      
+    - name: list-out
+      run: ls -l
+      
+    - name: list docker images
+      run: sudo docker images
+      
+    - name: create volume
+      run: sudo docker volume create dbda_volume
+      
+    - name: run docker container with volume
+      run: sudo docker run -v "$(pwd)":/dbda_volume cc4956:102267eac6f850e5e2ae674a50bf9349
+      
+    - name: Print docker volume ls
+      run: sudo docker volume ls
+      
+    - name: Create directory for bind mount
+      run: mkdir target && ls -l  
+      
+    - name: Using bind mount
+      run: sudo docker run --name=dbda_2 --mount type=bind,source="$(pwd)"/target,target=/opt cc4956:102267eac6f850e5e2ae674a50bf9349
+      
+    - name: list-out
+      run: ls -l
+    
+    - name: list target directory
+      run: ls -l ./target
