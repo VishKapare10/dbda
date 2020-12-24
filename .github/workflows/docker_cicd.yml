@@ -36,7 +36,7 @@ jobs:
     steps:
     - name: My first step
       if: ${{ github.event_name == 'push' }}
-      run: echo This event is a pull request
+      run: echo This event is a push event:${{ github.event_name }}
       
     - uses: actions/checkout@v2
     - name: Build and push docker image
