@@ -39,6 +39,7 @@ jobs:
     if: ${{ success() }} && ${{ github.event_name == 'push' }}
     needs: setup_and_run
     steps:
+    - uses: actions/checkout@v2
     - name: Build and push docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
