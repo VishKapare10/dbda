@@ -18,3 +18,13 @@ cat > dbda.sh <<EOF
 #!/usr/bin/bash
 echo hello dbda!
 EOF
+
+%install
+mkdir -p %{buildroot}/usr/bin/
+install -m 755 dbda.sh %{buildroot}/usr/bin/dbda.sh
+
+%files
+/usr/bin/dbda.sh
+
+%changelog
+# let's skip this for now
