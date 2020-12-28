@@ -11,7 +11,6 @@ jobs:
               
     - name: setup-devtree and build rpm
       run: |
-        mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
         tar -cf dbda.tar.gz ./repo
         ls -l
         mv ./dbda.tar.gz ./rpmbuild/SOURCES
