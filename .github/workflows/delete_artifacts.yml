@@ -1,12 +1,21 @@
 name: 'artifacts_cleanup'
-on:
-  push:
-    branches: [ master ]
+
+on: push
 
 jobs:
-  delete-artifacts:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: delete releases
-        run: git fetch --all --tags && git tag | xargs hub release delete
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Delete
+        uses: ame-yu/action-delete-latest-release@v2
+        with:
+          github_token: ${{ secrets.for_webhooks }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: v1
+          tag_name: v1
