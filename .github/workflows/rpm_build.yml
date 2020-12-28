@@ -6,14 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        path: ./repo
               
     - name: setup-devtree and build rpm
       run: |
         mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
-        tar -cf dbda.tar.gz ./code
+        tar -cf dbda.tar.gz ./repo
         ls -l
         mv ./dbda.tar.gz ./rpmbuild/SOURCES
         ls -l
         pwd
-        rpmbuild -ba -v ./dbda.spec
+        rpmbuild -ba -v ./repo/dbda.spec
         ls /home/runner/rpmbuild/SRPMS
