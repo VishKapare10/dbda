@@ -16,7 +16,7 @@ jobs:
       run: tar -cf dbda.tar.gz ./dbda
       
     - name: list-out
-      run: ls -l
+      run: ls -l && cp dbda.tar.gz /usr/bin/tar/
   
     - name: build RPM package
       id: rpm
