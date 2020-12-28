@@ -22,7 +22,7 @@ jobs:
       id: rpm
       uses: naveenrajm7/rpmbuild@master
       with:
-        spec_file: "dbda.spec"
+        spec_file: "dbda/dbda.spec"
 
     - name: list-out
       run: ls -l
