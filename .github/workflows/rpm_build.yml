@@ -16,7 +16,7 @@ jobs:
       run: tar -cf dbda.tar.gz ./dbda
       
     - name: build rpm package
-      run: rpmbuild -ba dbda/dbda.spec
+      run: rpmdev-setuptree && rpmbuild -ba dbda/dbda.spec
       
     - name: list-out
       run: ls -l
