@@ -7,11 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
               
-    - name: setup-devtree and build rpm
-      run: |
-        mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
-        tar -cf dbda.tar.gz ./code
-        ls -l
-        pwd
-        rpmbuild -ba -v ./dbda.spec
-        ls -l rpmbuild/SRPMS
+    - name: build RPM package
+      id: rpm
+      uses: naveenrajm7/rpmbuild@master
+      with:
+        spec_file: "dbda.spec"
