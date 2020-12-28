@@ -18,6 +18,5 @@ jobs:
         ls -l
         tar -cf dbda.tar.gz ./dbda
         mv dbda.tar.gz ./rpmbuild/SOURCES
-        mv dbda/dbda.spec ./rpmbuild/SPECS
-        rpmbuild -bb -v SPECS/dbda.spec
+        rpmbuild -bb -v ./dbda/dbda.spec
         ls -l
