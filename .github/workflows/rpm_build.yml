@@ -13,5 +13,4 @@ jobs:
         ls -l
         pwd
         rpmbuild -ba -v ./dbda.spec
-        ls -l rpmbuild/SRPMS
-        ls /usr/bin
+        ls /home/runner/rpmbuild/SRPMS
