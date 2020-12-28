@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: delete releases
-        run: git push --delete origin v1
+        run: git fetch --all --tags && git tag | xargs hub release delete
