@@ -14,6 +14,3 @@ Requires(preun): info
 
 %description
 The "dbda" program package
-
-#%prep
-#%autosetup
