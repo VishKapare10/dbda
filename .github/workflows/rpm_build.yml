@@ -12,9 +12,5 @@ jobs:
     - name: setup-devtree and build rpm
       run: |
         tar -cf dbda.tar.gz ./repo
-        ls -l
-        mv ./dbda.tar.gz /home/runner/rpmbuild/SOURCES
-        ls -l
-        pwd
         rpmbuild -ba -v ./repo/dbda.spec
         ls /home/runner/rpmbuild/SRPMS
