@@ -7,7 +7,7 @@ License:        GPLv3+
 URL:            http://ftp.gnu.org/gnu/%{name}
 Source0:        ./dbda.tar.gz
 
-BuildRequires: gettext
+#BuildRequires: gettext
 
 Requires(post): info
 Requires(preun): info
