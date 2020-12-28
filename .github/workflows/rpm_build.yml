@@ -6,7 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        path: ./dbda
 
+    - name: list-out
+      run: ls -l
+    
+    - name: Create tar file
+      run: tar -cf dbda.tar.gz ./dbda
+      
+    - name: list-out
+      run: ls -l
+  
     - name: build RPM package
       id: rpm
       uses: naveenrajm7/rpmbuild@master
