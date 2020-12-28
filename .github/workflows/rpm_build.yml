@@ -13,7 +13,7 @@ jobs:
       run: |
         tar -cf dbda.tar.gz ./repo
         ls -l
-        mv ./dbda.tar.gz ./rpmbuild/SOURCES
+        mv ./dbda.tar.gz /home/runner/rpmbuild/SOURCES
         ls -l
         pwd
         rpmbuild -ba -v ./repo/dbda.spec
