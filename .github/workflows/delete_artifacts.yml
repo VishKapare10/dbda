@@ -1,7 +1,7 @@
 name: 'artifacts_cleanup'
 on:
-  schedule:
-    - cron: '*/1 * * * *' # every minute
+  push:
+    branches: [ master ]
 
 jobs:
   delete-artifacts:
