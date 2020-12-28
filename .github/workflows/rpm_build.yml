@@ -15,12 +15,12 @@ jobs:
     - name: Create tar file
       run: tar -cf dbda.tar.gz ./dbda
        
-    - name: build RPM package
-      id: rpm
-      uses: naveenrajm7/rpmbuild@master
-      with:
-        spec_file: "dbda/dbda.spec"
-      
+    - name: setup-devtree
+      run: |
+        mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS 
+        mv dbda.tar.gz ./rpmbuild/SOURCES/
+        rpmbuild -ba dbda/dbda.spec
+         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
