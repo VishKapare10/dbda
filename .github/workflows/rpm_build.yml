@@ -16,9 +16,5 @@ jobs:
       run: |
         mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
         ls -l
-         
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: Binary RPM
-        path: ${{ steps.rpm.outputs.rpm_dir_path }}
+        tar -cf dbda.tar.gz ./dbda
+        ls -l
