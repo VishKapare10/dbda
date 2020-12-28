@@ -57,4 +57,4 @@ jobs:
         with:
           log_level: 'debug'
           min_bytes: '0'
-          pattern: '\.zip'
+          pattern: '.zip'
