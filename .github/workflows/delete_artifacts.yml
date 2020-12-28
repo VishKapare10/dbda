@@ -3,7 +3,7 @@ name: 'artifacts_cleanup'
 on: push
 
 jobs:
-  build:
+  checkout_and_delete:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,10 +12,4 @@ jobs:
       - name: Delete
         uses: ame-yu/action-delete-latest-release@v2
         with:
-          github_token: ${{ secrets.for_webhooks }}
-
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: Release refs/pull/4/merge
-          tag_name: refs/pull/4/merge
+          github_token: ${{ secrets.FOR_WEBHOOKS_SECRET }}
