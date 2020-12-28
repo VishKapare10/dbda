@@ -5,7 +5,7 @@ Summary:        The "dbda repo" program from GNU
 
 License:        GPLv3+
 URL:            http://ftp.gnu.org/gnu/%{name}
-Source0:        ./dbda.tar.gz
+Source0:        dbda.tar.gz
 
 #BuildRequires: gettext
 
