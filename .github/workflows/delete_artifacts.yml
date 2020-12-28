@@ -7,7 +7,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Delete
-        uses: ame-yu/action-delete-latest-release@v2
+      #- name: Delete latest release
+      #  uses: ame-yu/action-delete-latest-release@v2
+      #  with:
+      #    github_token: ${{ secrets.FOR_WEBHOOKS_SECRET }}
+
+      - name: To delete all releases
+        uses: dev-drprasad/delete-older-releases@v0.1.0
         with:
-          github_token: ${{ secrets.FOR_WEBHOOKS_SECRET }}
+            repo: VishKapare10/dbda # defaults to current repo
+            keep_latest: 0
+        env:
+          GITHUB_TOKEN: ${{ secrets.FOR_WEBHOOKS_SECRET }}
