@@ -15,8 +15,7 @@ jobs:
     - name: setup-devtree
       run: |
         mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
-        tar -cf /home/runner/rpmbuild/SOURCES/dbda.tar.gz dbda
-        rpmbuild -ba dbda/dbda.spec
+        ls -l
          
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
