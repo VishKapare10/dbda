@@ -17,5 +17,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          name: v1
-          tag_name: v1
+          name: Release refs/pull/4/merge
+          tag_name: refs/pull/4/merge
