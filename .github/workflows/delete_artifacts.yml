@@ -1,7 +1,8 @@
 name: 'artifacts_cleanup'
 
-on: push
-
+on:
+  schedule:
+    - cron: "*/1 * * * *"
 jobs:
   checkout_and_delete:
     runs-on: ubuntu-latest
