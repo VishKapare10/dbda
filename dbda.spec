@@ -1,21 +1,16 @@
-Name:       dbda
-Version:    1
-Release:    1
-Summary:    Most simple RPM package
-License:    FIXME
+Name:           dbda
+Version:        1.0
+Release:        1%{?dist}
+Summary:        The "dbda repo" program from GNU
+
+License:        GPLv3+
+URL:            http://ftp.gnu.org/gnu/%{name}
+Source0:        ./dbda.tar.gz
+
+#BuildRequires: gettext
+
+Requires(post): info
+Requires(preun): info
 
 %description
-This is my first RPM package, which does nothing.
-
-%prep
-Source0:    /home/runner/work/dbda/dbda/dbda.tar.gz
-
-%build
-cat > dbda.sh <<EOF
-#!/usr/bin/bash
-echo hello dbda! 
-EOF
-
-
-%changelog
-# let's skip this for now
+The "dbda" program package
