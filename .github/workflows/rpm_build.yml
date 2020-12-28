@@ -14,5 +14,7 @@ jobs:
         mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
         tar -cf dbda.tar.gz ./dbda
         mv dbda.tar.gz ./rpmbuild/SOURCES
-        rpmbuild -ba -v ./dbda/dbda.spec
+        rpmbuild -bb -v ./dbda/dbda.spec
         ls -l rpmbuild/SRPMS
+        mv rpmbuild/SRPMS .
+        ls SRPMS
