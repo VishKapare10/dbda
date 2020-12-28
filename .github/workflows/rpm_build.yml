@@ -13,6 +13,7 @@ jobs:
       run: |
         mkdir -p /home/runner/rpmbuild/SOURCES
         tar -cf dbda.tar.gz ./repo
-        cp -r repo /home/runner/rpmbuild/SOURCES
+        ls -l
+        cp dbda.tar.gz /home/runner/rpmbuild/SOURCES
         rpmbuild -ba -v ./repo/dbda.spec
         ls /home/runner/rpmbuild/SRPMS
