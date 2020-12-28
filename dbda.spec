@@ -8,7 +8,7 @@ License:    FIXME
 This is my first RPM package, which does nothing.
 
 %prep
-# we have no source, so nothing here
+Source0:    ./dbda.tar.gz
 
 %build
 cat > dbda.sh <<EOF
@@ -16,12 +16,6 @@ cat > dbda.sh <<EOF
 echo hello dbda! 
 EOF
 
-%install
-mkdir -p %{buildroot}/usr/bin/
-install -m 755 dbda.sh %{buildroot}/usr/bin/dbda.sh
-
-%files
-/usr/bin/dbda.sh
 
 %changelog
 # let's skip this for now
