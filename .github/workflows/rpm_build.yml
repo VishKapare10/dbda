@@ -15,15 +15,9 @@ jobs:
     - name: Create tar file
       run: tar -cf dbda.tar.gz ./dbda
       
-    - name: copy tar file
-      run: cp dbda.tar.gz /usr/bin/tar
-  
-    - name: build RPM package
-      id: rpm
-      uses: naveenrajm7/rpmbuild@master
-      with:
-        spec_file: "dbda/dbda.spec"
-
+    - name: build rpm package
+      run: rpmbuild -ba dbda/dbda.spec
+      
     - name: list-out
       run: ls -l
       
