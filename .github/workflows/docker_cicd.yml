@@ -44,10 +44,16 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
       if: ${{ github.event_name == 'push' }}
     
-  delete-artifacts:
+  delete-by-name:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
-      - uses: kolpav/purge-artifacts-action@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Delete Artifact by Name
+        uses: jimschubert/delete-artifacts-action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          expire-in: 0 # Setting this to 0 will delete all artifacts
+          log_level: 'debug'
+          artifact_name: '${{ v1 }}'
+          min_bytes: '0'
