@@ -19,4 +19,4 @@ jobs:
         tar -cf dbda.tar.gz ./dbda
         mv dbda.tar.gz ./rpmbuild/SOURCES
         ls -l
-        rpmbuild -ba dbda/dbda.spec
+        pwd
