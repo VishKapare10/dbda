@@ -8,7 +8,7 @@ License:    FIXME
 This is my first RPM package, which does nothing.
 
 %prep
-Source0:    ./dbda.tar.gz
+Source0:    /home/runner/work/dbda/dbda/dbda.tar.gz
 
 %build
 cat > dbda.sh <<EOF
