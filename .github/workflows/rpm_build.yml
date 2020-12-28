@@ -16,4 +16,10 @@ jobs:
         ls -l
         cp dbda.tar.gz /home/runner/rpmbuild/SOURCES
         rpmbuild -ba -v ./repo/dbda.spec
-        ls /home/runner/rpmbuild/SRPMS
+        ls -l /home/runner/rpmbuild/SRPMS
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: Binary RPM
+        path: ${{ /home/runner/rpmbuild/SRPMS }}
