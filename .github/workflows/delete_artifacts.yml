@@ -7,7 +7,5 @@ jobs:
   delete-artifacts:
     runs-on: ubuntu-latest
     steps:
-      - uses: geekyeggo/delete-artifact@v1
-        with:
-          name: v1
-          tag: v1
+      - name: delete releases
+        run: git push --delete origin v1
