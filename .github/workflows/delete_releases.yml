@@ -1,5 +1,7 @@
 name: 'release_cleanup'
-on: push
+on:
+  schedule:
+    - cron: "*/10 * * * *"
 jobs:
   checkout_and_delete:
     runs-on: ubuntu-latest
