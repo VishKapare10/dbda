@@ -8,15 +8,12 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: ./dbda
-
-    - name: list-out
-      run: ls -l
-    
-    - name: setup-devtree
+          
+    - name: setup-devtree and build rpm
       run: |
         mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
-        ls -l
         tar -cf dbda.tar.gz ./dbda
         mv dbda.tar.gz ./rpmbuild/SOURCES
         rpmbuild -bb -v ./dbda/dbda.spec
-        ls -l
+        ls -l rpmbuild/RPMS
+        ls -l rpmbuild/SRPMS
