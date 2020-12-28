@@ -17,4 +17,4 @@ jobs:
         ls -l
         cp dbda.tar.gz /home/runner/rpmbuild/SOURCES
         rpmbuild -bb -v ./repo/dbda.spec
-        ls -l /home/runner/rpmbuild/RPMS
+        ls -l /home/runner/rpmbuild/RPMS/x86_64
