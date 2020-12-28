@@ -6,17 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      
-    - name: pwd and list
-      run: |
-        pwd
-        ls -l
-        
+              
     - name: setup-devtree and build rpm
       run: |
         mkdir -p rpmbuild/BUILD rpmbuild/BUILDROOT rpmbuild/RPMS rpmbuild/SOURCES rpmbuild/SPECS rpmbuild/SRPMS
-        tar -cf dbda.tar.gz ./
+        tar -cf dbda.tar.gz ./code
         mv dbda.tar.gz ./rpmbuild/SOURCES
-        pwd
         rpmbuild -ba -v ./dbda.spec
         ls -l rpmbuild/SRPMS
