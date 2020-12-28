@@ -16,5 +16,3 @@ jobs:
         mv dbda.tar.gz ./rpmbuild/SOURCES
         rpmbuild -bb -v ./dbda/dbda.spec
         ls -l rpmbuild/SRPMS
-        mv rpmbuild/SRPMS .
-        ls SRPMS
