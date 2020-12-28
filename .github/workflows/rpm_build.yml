@@ -13,6 +13,5 @@ jobs:
         tar -cf dbda.tar.gz ./code
         ls -l
         pwd
-        mv dbda.tar.gz ./rpmbuild/SOURCES/
         rpmbuild -ba -v ./dbda.spec
         ls -l rpmbuild/SRPMS
