@@ -19,7 +19,7 @@ jobs:
       id: rpm
       uses: naveenrajm7/rpmbuild@master
       with:
-        spec_file: "dbda.spec"
+        spec_file: "dbda/dbda.spec"
       
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
