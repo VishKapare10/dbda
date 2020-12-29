@@ -11,8 +11,8 @@ jobs:
       
     - name: list-out
       run: |
-         ls -l 
-         ls -l ./repo
+         ls -l
+         ls -l dbda
           
     - name: rpm_build
       id: rpm_build
