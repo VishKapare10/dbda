@@ -1,5 +1,4 @@
-Name:           dbda
-Version:        3.0
+Version:        4.0
 Release:        1%{?dist}
 Summary:        A test script
 
@@ -28,7 +27,7 @@ A test script inside a simple RPM package
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/opt/dbda
-install code/* $RPM_BUILD_ROOT/opt/dbda/
+install dbda/code/* $RPM_BUILD_ROOT/opt/dbda/
 
 
 %clean
