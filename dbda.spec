@@ -12,12 +12,6 @@ This is my first RPM package.
 
 %prep
 
-#%build
-#cat > dbda.sh <<EOF
-#!/usr/bin/bash
-#echo hello dbda!
-#EOF
-
 %install
 mkdir -p %{buildroot}/usr/bin/
 install -m 755 dbda/code/* %{buildroot}/usr/bin/
