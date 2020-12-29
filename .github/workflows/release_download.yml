@@ -15,3 +15,6 @@ jobs:
         path: downloads
         file: dbda-dec29.rpm
         token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: list-out
+      run: ls -l
