@@ -1,3 +1,4 @@
+Name:           dbda
 Version:        4.0
 Release:        1%{?dist}
 Summary:        A test script
