@@ -1,5 +1,5 @@
 Name:       dbda
-Version:    1
+Version:    30
 Release:    1
 Summary:    Most simple RPM package
 License:    FIXME
@@ -13,10 +13,19 @@ This is my first RPM package.
 %prep
 
 %install
-mkdir -p %{buildroot}/usr/bin/
-install -m 755 dbda/code/* %{buildroot}/usr/bin/
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/opt/dbda
+install dbda/code/* $RPM_BUILD_ROOT/opt/dbda/
+
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 
 %files
-/usr/bin/*
+%dir /opt/dbda
+%defattr(-,root,root,-)
+/opt/dbda/*
 
-#%changelog
+%post
+chmod 755 -R /opt/dbda
