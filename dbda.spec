@@ -21,19 +21,19 @@ A test script inside a simple RPM package
 #echo hello dbda!
 #EOF
 
-%install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/opt/dbda
-install dbda/code/* $RPM_BUILD_ROOT/opt/dbda/
+#%install
+#rm -rf $RPM_BUILD_ROOT
+#install -d $RPM_BUILD_ROOT/opt/dbda
+#install dbda/code/* $RPM_BUILD_ROOT/opt/dbda/
 
-%clean
-rm -rf $RPM_BUILD_ROOT
+#%clean
+#rm -rf $RPM_BUILD_ROOT
 
 
-%files
-%dir /opt/dbda
-%defattr(-,root,root,-)
-/opt/dbda/*
+#%files
+#%dir /opt/dbda
+#%defattr(-,root,root,-)
+#/opt/dbda/*
 
-%post
-chmod 755 -R /opt/dbda
+#%post
+#chmod 755 -R /opt/dbda
