@@ -1,17 +1,27 @@
 name: RPM Build
 on: push
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        path: ./dbda
-      
-    - name: list-out
-      run: |
-         ls -l
+        path: ./repo
+        
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: dbda_rpm_release
+        body: |
+            Changes in this Release
+              - Create RPM
+              - Upload Source RPM
+            draft: false
+            prerelease: false 
           
     - name: rpm_build
       id: rpm_build
@@ -20,5 +30,16 @@ jobs:
         tar -cf dbda.tar.gz ./repo
         ls -l
         cp dbda.tar.gz /home/runner/rpmbuild/SOURCES
-        rpmbuild -ba -v ./repo/dbda.spec
-        ls -l /home/runner/rpmbuild/SRPMS
+        rpmbuild -bb -v ./repo/dbda.spec
+        ls -l /home/runner/rpmbuild/RPMS/x86_64
+   
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the rpm_build step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: /home/runner/rpmbuild/RPMS/x86_64/dbda-1-1.x86_64.rpm
+          asset_name: dbda-dec29.rpm
+          asset_content_type: application/rpm
