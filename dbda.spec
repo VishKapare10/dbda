@@ -21,10 +21,10 @@ A test script inside a simple RPM package
 #echo hello dbda!
 #EOF
 
-%install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/opt/dbda
-install repo/code/* $RPM_BUILD_ROOT/opt/dbda/
+#%install
+#rm -rf $RPM_BUILD_ROOT
+#install -d $RPM_BUILD_ROOT/opt/dbda
+#install repo/code/* $RPM_BUILD_ROOT/opt/dbda/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
