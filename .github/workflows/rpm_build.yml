@@ -22,5 +22,5 @@ jobs:
         cd rpmbuild
         tar -cf dbda.tar.gz dbda
         ls -l
-        rpmbuild -bb -v dbda.spec
+        rpmbuild -bb -v SPECS/dbda.spec
         ls -l /home/runner/rpmbuild/RPMS/x86_64
