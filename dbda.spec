@@ -20,7 +20,7 @@ EOF
 
 %install
 mkdir -p %{buildroot}/usr/bin/
-install -m 755 code %{buildroot}/usr/bin/
+install -m 755 dbda/code/* %{buildroot}/usr/bin/
 
 %files
 /usr/bin/*
