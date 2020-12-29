@@ -6,21 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        path: ./dbda
       
     - name: list-out
       run: |
          ls -l
-         ls -l dbda
           
     - name: rpm_build
       id: rpm_build
       run: |
         mkdir -p /home/runner/rpmbuild/SOURCES
-        tar -cf dbda.tar.gz ./dbda
+        tar -cf dbda.tar.gz .
         ls -l
         cp dbda.tar.gz /home/runner/rpmbuild/SOURCES
-        rpmbuild -bb -v ./dbda/dbda.spec
+        rpmbuild -bb -v dbda.spec
         ls -l /home/runner/rpmbuild/RPMS/x86_64
    
