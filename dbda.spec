@@ -1,5 +1,5 @@
 Name:       dbda
-Version:    30
+Version:    1
 Release:    1
 Summary:    Most simple RPM package
 License:    FIXME
