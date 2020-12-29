@@ -17,4 +17,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: list-out
-      run: ls -l
+      run: ls -l downloads
