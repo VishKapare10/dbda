@@ -20,9 +20,9 @@ EOF
 
 %install
 mkdir -p %{buildroot}/usr/bin/
-install -m 755 dbda.sh %{buildroot}/usr/bin/dbda.sh
+install -m 755 code %{buildroot}/usr/bin/
 
 %files
-/usr/bin/dbda.sh
+/usr/bin/*
 
 #%changelog
