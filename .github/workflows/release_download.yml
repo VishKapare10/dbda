@@ -17,4 +17,8 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: list-out
-      run: ls -l downloads
+      run: |
+        ls -l downloads
+        cd downloads
+        rpm -Uvh  dbda-dec29.rpm
+        ls -al /opt/dbda
