@@ -28,7 +28,7 @@ A test script inside a simple RPM package
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/opt/dbda
-install dbda/* $RPM_BUILD_ROOT/opt/dbda/
+install code/* $RPM_BUILD_ROOT/opt/dbda/
 
 
 %clean
