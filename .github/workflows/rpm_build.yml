@@ -26,8 +26,8 @@ jobs:
     - name: rpm_build
       id: rpm_build
       run: |
-        mkdir -p /home/runner/rpmbuild/SOURCES
-        cp -r dbda /home/runner/rpmbuild/
+        mkdir -p /home/runner/rpmbuild/SOURCES /home/runner/rpmbuild/BUILD
+        cp -r dbda /home/runner/rpmbuild/BUILD
         pwd
         tar -cf dbda.tar.gz ./dbda
         ls -l
