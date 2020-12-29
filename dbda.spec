@@ -1,44 +1,22 @@
-Name:           dbda
-Version:        4.0
-Release:        1%{?dist}
-Summary:        A test script
-
-Group:          Utilities
-License:        GPL
-URL:            http://oracle-base.com/articles/linux/linux-build-simple-rpm-packages.php
-Source0:        dbda-1.0.tar.gz
-BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-
-#BuildRequires:
-#Requires:
-
+Name:       dbda
+Version:    1
+Release:    1
+Summary:    Most simple RPM package
+License:    FIXME
+URL:            http://ftp.gnu.org/gnu/%{name}
+Source0:        ./dbda.tar.gz
 %description
-A test script inside a simple RPM package
-
-
-#%prep
-#%setup -q
-
-
+This is my first RPM package, which does nothing.
+%prep
+# we have no source, so nothing here
 %build
-
-
+cat > dbda.sh <<EOF
+#!/usr/bin/bash
+echo hello dbda!
+EOF
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/opt/dbda
-install dbda/dbda/code/* $RPM_BUILD_ROOT/opt/dbda/
-
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-
+mkdir -p %{buildroot}/usr/bin/
+install -m 755 dbda.sh %{buildroot}/usr/bin/dbda.sh
 %files
-%dir /opt/dbda
-%defattr(-,root,root,-)
-/opt/dbda/*
-
-%post
-chmod 755 -R /opt/dbda
+/usr/bin/dbda.sh
+#%changelog
