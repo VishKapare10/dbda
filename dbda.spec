@@ -12,11 +12,11 @@ This is my first RPM package.
 
 %prep
 
-%build
-cat > dbda.sh <<EOF
+#%build
+#cat > dbda.sh <<EOF
 #!/usr/bin/bash
-echo hello dbda!
-EOF
+#echo hello dbda!
+#EOF
 
 %install
 mkdir -p %{buildroot}/usr/bin/
