@@ -26,5 +26,5 @@ install -m 755 dbda.sh %{buildroot}/usr/bin/dbda.sh
 #%files
 /usr/bin/dbda.sh
 
-#%changelog
+%changelog
 # let's skip this for now
