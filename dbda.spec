@@ -24,7 +24,7 @@ mkdir -p %{buildroot}/usr/bin/
 install -m 755 dbda.sh %{buildroot}/usr/bin/dbda.sh
 
 #%files
-#/usr/bin/dbda.sh
+/usr/bin/dbda.sh
 
 #%changelog
 # let's skip this for now
