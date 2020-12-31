@@ -1,0 +1,36 @@
+class Strace_data:
+
+        # __init__ function
+        def __init__(self):
+            pass
+
+        #Method to get datafrom strace log file and add the values to the dictionary
+        def get_data(self):
+            with open('file_ops.log') as f:
+                Lines = f.readlines()
+                for line in Lines:
+                    ls = line.split()
+
+                    #Creating instace of Dict_ops class
+                    log_dict = Dict_ops()
+
+                    #Method call for adding dictinary values
+                    log_dict.add(ls[0],ls[1])
+                    print(log_dict)
+
+
+class Dict_ops(dict):
+
+        # __init__ function
+        def __init__(self):
+                self = dict()
+
+        #Method to add key:value
+        def add(self, key, value):
+                self[key] = value
+
+#creating instace of strace class
+inst2 = Strace_data()
+
+#Method call to get data from log file
+inst2.get_data()
