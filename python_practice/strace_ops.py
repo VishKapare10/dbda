@@ -15,7 +15,7 @@ class Strace_data:
                     log_dict = Dict_ops()
 
                     #Method call for adding dictinary values
-                    log_dict.add(ls[0],ls[1])
+                    log_dict.add(ls[4],ls[3])
                     print(log_dict)
 
 
@@ -34,3 +34,8 @@ inst2 = Strace_data()
 
 #Method call to get data from log file
 inst2.get_data()
+
+
+#Commands to run
+#strace -c -o file_ops.log python3 main.py
+#python3 strace_ops.py
