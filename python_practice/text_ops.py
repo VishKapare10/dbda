@@ -54,4 +54,4 @@ print(data)
 
 #Method call to get occurance of any word
 number_of_occurances = f_inst1.get_count_of_occurance(data, "the")
-print(number_of_occurances
+print(number_of_occurances)
