@@ -41,8 +41,8 @@ func main() {
         //fmt.Println("Type of var my_uuid_str = ", reflect.TypeOf(my_uuid.String()))
         C.call_pmdb_exec(C.callback(C.pmdb_exec), pointer.Save(f), raft_uuid_str, my_uuid_str)
 
-        s := &String_data{"Nory was a Catholic because her mother was a Catholic, and Nory’s mother was a Catholic because her father was a Catholic, and her father was a Catholic because his mother was a Catholic, or had been.", ""}
-        s.to_find = "Catholic"
+        s := &String_data{"India has been the one major deviant case for consociational (power-sharing) theory, and its sheer size makes the exception especially damaging. A deeply divided society with, supposedly, a mainly majoritarian type of democracy, India nevertheless has been able to maintain its democratic system. Careful examination reveals, however, that Indian democracy has displayed all four crucial elements of power-sharing theory. In fact, it was a perfectly and thoroughly consociational system during its first two decades. From the late 1960s on, although India has remained basically consociational, some of its power-sharing elements have weakened under the pressure of greater mass mobilization. Concomitantly, in accordance with consociational theory, intergroup hostility and violence have increased. Therefore, India is not a deviant case for consociational theory but, instead, an impressive confirming case.", ""}
+        s.to_find = "consociational"
 
 
         C.call_pmdb_read(C.callback(C.pmdb_read), pointer.Save(s))
