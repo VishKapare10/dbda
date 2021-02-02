@@ -24,10 +24,7 @@ jobs:
              
     - name: Print new build number
       run: echo "Build number is $BUILD_NUMBER"
-      
-    - name: make directory for test log
-      run : mkdir ./test_log
-      
+          
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -44,8 +41,8 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
          name: artifact_after_failure01
-         path: ./test_log
+         path: .
       if: failure()
       
     - name: list the log dir
-      run: ls ./test_log
+      run: ls -l
