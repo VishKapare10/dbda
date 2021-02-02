@@ -25,7 +25,9 @@ jobs:
              
     - name: Print new build number
       run: echo "Build number is $BUILD_NUMBER"
-          
+      
+    - run: touch "$BUILD_NUMBER".txt
+    - run: ls -l
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
