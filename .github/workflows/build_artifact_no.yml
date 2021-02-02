@@ -32,5 +32,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
          name: test-recipe-report.${{ steps.buildnumber.outputs.build_number }}
-         path: .
+         path: ${{ github.workspace }}
       if: failure()
