@@ -32,7 +32,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
   
     - name: Test the python code
-      run: python3 ./python_practice/dict_use_case.py
+      run: find . -name "*.py" | xargs -n 1 python3 
       
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
@@ -42,4 +42,4 @@ jobs:
       with:
          name: dbda.artifact.${{ steps.buildnumber.outputs.build_number }}
          path: .
-      #if: failure()
+      if: failure()
