@@ -40,6 +40,6 @@ jobs:
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
-         name: dbda.artifact.${{ steps.buildnumber.outputs.build_number }}
+         name: artifact_after_failure01
          path: .
       if: failure()
