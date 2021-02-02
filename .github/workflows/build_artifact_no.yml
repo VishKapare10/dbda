@@ -18,6 +18,7 @@ jobs:
         python-version: 3.8
       
     - name: Generate build number
+      id: buildnumber
       uses: einaregilsson/build-number@v3
       with:
         token: ${{secrets.github_token}} 
@@ -43,6 +44,3 @@ jobs:
          name: artifact_after_failure01
          path: .
       if: failure()
-      
-    - name: list the log dir
-      run: ls -l
