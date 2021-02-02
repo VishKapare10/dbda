@@ -28,10 +28,6 @@ jobs:
       uses: einaregilsson/build-number@v3
       with:
         token: ${{secrets.github_token}}
-  
-    - run: echo $BUILD_NUMBER
-    - run: touch "$BUILD_NUMBER".txt
-    - run: ls -l
     
     - name: Test the python code
       run: python3 ./python_practice/dict_use_case.py
@@ -42,8 +38,7 @@ jobs:
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
           zip dbda_artifact."$BUILD_NUMBER".zip code/*
-    - run: ls -l
-    - run: pwd      
+          
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -56,13 +51,6 @@ jobs:
           draft: false
           prerelease: false   
           
-    - run : cat "$BUILD_NUMBER".txt
-    - run: ls dbda_artifact."$BUILD_NUMBER".zip
-    - name: set artifact path
-      env: 
-        artifact_path: ./dbda_artifact."$BUILD_NUMBER".zip
-      run : echo ${{ env.artifact_path }}
-
     - name: Prepare artifact metadata
       id: prepare_artifact_metadata
       run: |
