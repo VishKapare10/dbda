@@ -33,6 +33,9 @@ jobs:
       
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
+    
+    - name: show build number
+      run: echo dbda.artifact.${{ steps.buildnumber.outputs.build_number }}
         
     - name: Archive the test results
       uses: actions/upload-artifact@v2
