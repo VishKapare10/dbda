@@ -23,6 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip3 install ansible
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+    - name: Generate build number
+      uses: einaregilsson/build-number@v3
+      with:
+        token: ${{secrets.github_token}}
   
     - name: Test the python code
       run: python3 ./python_practice/dict_use_case.py
