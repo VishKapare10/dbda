@@ -38,9 +38,8 @@ jobs:
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
       
-    - name: Archive the test results
+    - name: publish artifact
       uses: actions/upload-artifact@v2
       with:
-         name: artifact_after_failure01
-         path: .
-      if: failure()
+        path: ${{ github.workspace }}
+        name: $BUILD_NUMBER
