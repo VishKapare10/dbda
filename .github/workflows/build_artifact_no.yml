@@ -37,9 +37,15 @@ jobs:
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
         
+    - name: make directory for test log
+      run : mkdir ./test_log
+      
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
          name: artifact_after_failure01
-         path: .
+         path: ./test_log
       if: failure()
+      
+    - name: list the log dir
+      run: ls ./test_log
