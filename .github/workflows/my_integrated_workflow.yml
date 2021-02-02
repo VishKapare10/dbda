@@ -30,6 +30,8 @@ jobs:
         token: ${{secrets.github_token}}
   
     - run: echo $BUILD_NUMBER
+    - run: touch "$BUILD_NUMBER".txt
+    - run: ls -l
     
     - name: Test the python code
       run: python3 ./python_practice/dict_use_case.py
