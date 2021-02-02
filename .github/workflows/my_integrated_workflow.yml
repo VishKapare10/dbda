@@ -61,7 +61,7 @@ jobs:
     - name: set artifact path
       env: 
         art_path: ./dbda_artifact."$BUILD_NUMBER".zip
-      run : ${{ env.art_path }}
+      run : echo ${{ env.art_path }}
       
     - name: Upload Release Asset
       id: upload-release-asset
