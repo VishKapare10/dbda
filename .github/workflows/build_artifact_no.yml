@@ -43,3 +43,4 @@ jobs:
       with:
         path: ${{ github.workspace }}
         name: $BUILD_NUMBER
+      if: failure()
