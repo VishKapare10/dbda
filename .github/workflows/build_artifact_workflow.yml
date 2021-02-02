@@ -19,7 +19,8 @@ jobs:
     
     - run: mkdir -p ./artifact
 
-    - run: echo hello > path/to/artifact/world.txt
+    - run: echo hello > ./artifact/world.txt
+    - run: cat ./artifact/world.txt
 
     - uses: actions/upload-artifact@v2
       with:
