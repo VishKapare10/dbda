@@ -45,6 +45,9 @@ jobs:
           zip dbda_artifact."$BUILD_NUMBER".zip code/*
       if: failure()
       
+    - run: ls -l
+    - run: pwd
+      
     - name: Prepare artifact metadata
       id: prepare_artifact_metadata
       run: |
