@@ -52,13 +52,13 @@ jobs:
     - name: Prepare artifact metadata
       id: prepare_artifact_metadata
       run: |
-        echo ::set-output name=ARTIFACT_PATH::dbda_artifact."$BUILD_NUMBER".zip
+        echo ::set-output name=ARTIFACT_NAME::dbda_artifact."$BUILD_NUMBER".zip
       if: failure()
       
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
-         name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
+         name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
          path: ${{ github.workspace }}
       if: failure()
     
