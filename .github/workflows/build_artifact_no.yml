@@ -70,3 +70,4 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
+      if: failure()
