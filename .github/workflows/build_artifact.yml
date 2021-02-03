@@ -65,9 +65,7 @@ jobs:
     - name: list
       run: ls -l
       if: failure()
-      
-    - name: Download a single artifact
+          
+    - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
-      with:
-        name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
       if: failure()
