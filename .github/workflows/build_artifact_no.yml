@@ -49,24 +49,20 @@ jobs:
     #  run: ls -l && pwd
     #  if: failure()
       
-    #- name: Prepare artifact metadata
-    #  id: prepare_artifact_metadata
-    #  run: |
-    #    echo ::set-output name=ARTIFACT_PATH::dbda_artifact."$BUILD_NUMBER".zip
-    #  if: failure()
+    - name: Prepare artifact metadata
+      id: prepare_artifact_metadata
+      run: |
+        echo ::set-output name=ARTIFACT_PATH::dbda_artifact."$BUILD_NUMBER".zip
+      if: failure()
       
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
-         name: artifact_after_failure.BUILD_NUMBER
+         name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
          path: ${{ github.workspace }}
       if: failure()
-
-    #- name: Download artifact after failure
-    #  uses: actions/download-artifact@v2
-    #  with:
-    #    name: artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
-    #  if: failure()
+    
+    - run: ls -l
 
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
