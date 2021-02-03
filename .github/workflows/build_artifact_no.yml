@@ -47,6 +47,7 @@ jobs:
       
     - name: list and pwd
       run: ls -l && pwd
+      if: failure()
       
     - name: Prepare artifact metadata
       id: prepare_artifact_metadata
