@@ -62,8 +62,11 @@ jobs:
          path: ${{ github.workspace }}
       if: failure()
 
-    - name: Download artifact after failure
+    #- name: Download artifact after failure
+    #  uses: actions/download-artifact@v2
+    #  with:
+    #    name: artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
+    #  if: failure()
+
+    - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
-      with:
-        name: artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
-      if: failure()
