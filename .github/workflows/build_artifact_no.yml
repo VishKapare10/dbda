@@ -43,6 +43,6 @@ jobs:
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
-         name: artifact_after_failure01
+         name: artifact_after_failure.${{ BUILD_NUMBER }}
          path: ${{ github.workspace }}
       if: failure()
