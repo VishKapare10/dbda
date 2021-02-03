@@ -65,5 +65,5 @@ jobs:
     - name: Download artifact after failure
       uses: actions/download-artifact@v2
       with:
-          name: homework
+          name: artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
       if: failure()
