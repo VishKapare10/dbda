@@ -40,11 +40,6 @@ jobs:
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
       
-    #- name: Build project # This would actually build your project, using zip for an example artifact
-    #  run: |
-    #     zip dbda_artifact."$BUILD_NUMBER".zip code/*
-    #  if: failure()
-      
     - name: list and pwd
       run: ls -l && pwd
       if: failure()
@@ -61,11 +56,3 @@ jobs:
          name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
          path: ${{ github.workspace }}
       if: failure()
-      
-    - name: list
-      run: ls -l
-      if: failure()
-          
-    #- name: Download all workflow run artifacts
-    #  uses: actions/download-artifact@v2
-    #  if: failure()
