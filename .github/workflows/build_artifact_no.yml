@@ -40,9 +40,15 @@ jobs:
     - name: Test playbook
       run: ansible-playbook code/debug_msg.yml
       
+    - name: Prepare artifact metadata
+      id: prepare_artifact_metadata
+      run: |
+        echo ::set-output name=ARTIFACT_PATH::./dbda_artifact."$BUILD_NUMBER".zip
+      if: failure()
+      
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
-         name: artifact_after_failure.${{ BUILD_NUMBER }}
+         name:  artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
          path: ${{ github.workspace }}
       if: failure()
