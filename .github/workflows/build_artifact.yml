@@ -1,0 +1,73 @@
+  
+#Workflow for building artifact with updated artifact no after every failure
+name: build_artifact_no_workflow
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+      
+    - name: Generate build number
+      id: buildnumber
+      uses: einaregilsson/build-number@v3
+      with:
+        token: ${{secrets.github_token}} 
+             
+    - name: Print new build number
+      run: echo "Build number is $BUILD_NUMBER"
+      
+    - run: touch "$BUILD_NUMBER".txt
+    - run: ls -l
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip3 install ansible
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+  
+    - name: Test the python code
+      run: find . -name "*.py" | xargs -n 1 python3 
+      
+    - name: Test playbook
+      run: ansible-playbook code/debug_msg.yml
+      
+    - name: Build project # This would actually build your project, using zip for an example artifact
+      run: |
+         zip dbda_artifact."$BUILD_NUMBER".zip code/*
+      if: failure()
+      
+    - name: list and pwd
+      run: ls -l && pwd
+      if: failure()
+      
+    - name: Prepare artifact metadata
+      id: prepare_artifact_metadata
+      run: |
+        echo ::set-output name=ARTIFACT_NAME::dbda_artifact."$BUILD_NUMBER".zip
+      if: failure()
+         
+    - name: Archive the test results
+      uses: actions/upload-artifact@v2
+      with:
+         name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
+         path: ${{ github.workspace }}
+      if: failure()
+      
+    - name: list
+      run: ls -l
+      if: failure()
+      
+    - name: Download a single artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
+      if: failure()
