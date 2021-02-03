@@ -55,15 +55,19 @@ jobs:
         echo ::set-output name=ARTIFACT_NAME::dbda_artifact."$BUILD_NUMBER".zip
       if: failure()
       
+    - name: Create log dir
+      run: mkdir log
+      
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
          name: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_NAME }}
-         path: ${{ github.workspace }}
+         path: ${{ github.workspace }}/log
       if: failure()
     
     - name: list and pwd
       run: ls -l && pwd
+      if: failure()
 
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
