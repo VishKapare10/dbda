@@ -62,7 +62,8 @@ jobs:
          path: ${{ github.workspace }}
       if: failure()
     
-    - run: ls -l
+    - name: list and pwd
+      run: ls -l && pwd
 
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
