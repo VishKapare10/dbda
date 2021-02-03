@@ -58,6 +58,7 @@ jobs:
     - name: Archive the test results
       uses: actions/upload-artifact@v2
       with:
-         name:  artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
+         tag: ${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
+         name: artifact_after_failure.${{ steps.prepare_artifact_metadata.outputs.ARTIFACT_PATH }}
          path: ${{ github.workspace }}
       if: failure()
