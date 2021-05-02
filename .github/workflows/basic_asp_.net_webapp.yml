@@ -14,6 +14,7 @@ jobs:
           dotnet-version: '5.0.101' # Check for latest at link at .NET 5 download page
       - run: dotnet build /home/runner/work/dbda/dbda/dotnet_core/basic_app
       - run: dotnet test /home/runner/work/dbda/dbda/dotnet_core/basic_app
+      - run: dotnet run /home/runner/work/dbda/dbda/dotnet_core/basic_app
       - run: ls -l
       - run: ls -l /home/runner/work/dbda/dbda/dotnet_core/basic_app
     # dotnet build and publish
