@@ -16,11 +16,12 @@ jobs:
     - run: ls -l
     - run: pwd
     - run: cd /home/runner/work/dbda/dbda/dotnet_core/basic_app
-    - run: pwd
+    - run: dotnet build /home/runner/work/dbda/dbda/dotnet_core/basic_app
+    - run: ls -l /home/runner/work/dbda/dbda/dotnet_core/basic_app
     # dotnet build and publish
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-    - name: dotnet publish
-      run: |
-        dotnet publish -c Release -o dotnetcorewebapp 
+    #- name: Build with dotnet
+    #  run: dotnet build --configuration Release
+    #- name: dotnet publish
+    #  run: |
+    #    dotnet publish -c Release -o dotnetcorewebapp 
     
