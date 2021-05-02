@@ -15,6 +15,8 @@ jobs:
         dotnet-version: 3.0.100
     - run: ls -l
     - run: pwd
+    - run: cd ./dotnet_core/basic_app
+    - run: pwd
     # dotnet build and publish
     - name: Build with dotnet
       run: dotnet build --configuration Release
